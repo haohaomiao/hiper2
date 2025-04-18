@@ -59,24 +59,7 @@ int main()
 
   size_t start = GetUsec();
   double dt = 1.0;
-//   for (size_t step = 0; step < 10; ++step)
-//   {
-//     for (size_t ii = 0; ii < ELEMENT_NUM; ++ii)
-//     {
-//       elements[ii].Velocity.x += dt * elements[ii].acct.x;
-//       elements[ii].Velocity.y += dt * elements[ii].acct.y;
-//       elements[ii].Velocity.z += dt * elements[ii].acct.z;
-//     }
-//     dt = dt * (((rand() % 10) / 10.0) * 2.0);
-    // SoA code below is slow  on AMD EPYC 7713 64-Core Processor.
-    // Splitting into three loops is better way.
-    /*for(size_t ii = 0; ii < ELEMENT_NUM; ++ii){
-        ele_soa.vel_x[ii] += dt * ele_soa.acct_x[ii];
-        ele_soa.vel_y[ii] += dt * ele_soa.acct_y[ii];
-        ele_soa.vel_z[ii] += dt * ele_soa.acct_z[ii];
-      }
-    */
-  //}
+
   for (size_t step = 0; step < 10; ++step){
     for (size_t ii = 0; ii < ELEMENT_NUM; ++ii)
     {
